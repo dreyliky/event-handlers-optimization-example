@@ -1,0 +1,35 @@
+@mixin grid-item {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+
+    &:hover {
+        background: rgba(var(--os-primary-color), .1);
+    }
+
+    &.selected {
+        background: rgba(var(--os-primary-color), .4);
+        font-weight: bold;
+    }
+}
+
+@mixin grid-item-icon {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    min-height: 64px;
+    background: rgba(var(--os-primary-color), .5);
+}
+
+@mixin grid-item-label {
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

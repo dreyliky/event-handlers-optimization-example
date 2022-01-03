@@ -1,0 +1,21 @@
+<os-header [size]="4">
+    In this example, we use the <b>GlobalEvents</b> service
+    for document click handling. It allows to decreasing amount
+    of click listeners from <b>n</b> to <b>1</b>.
+</os-header>
+
+<os-form-field [isStacked]="true">
+    <os-label>Grid items amount</os-label>
+
+    <os-number-box
+        [ngModel]="gridItemsAmount"
+        (osChange)="onAmountOfItemsChanged($event)">
+    </os-number-box>
+</os-form-field>
+
+<app-grid>
+    <app-grid-item
+        *ngFor="let gridItem of gridItems"
+        [label]="gridItem">
+    </app-grid-item>
+</app-grid>

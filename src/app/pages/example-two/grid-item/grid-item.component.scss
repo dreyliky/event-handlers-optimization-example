@@ -1,0 +1,13 @@
+@import "grid-item";
+
+:host {
+    @include grid-item;
+}
+
+.icon {
+    @include grid-item-icon;
+}
+
+.label {
+    @include grid-item-label;
+}

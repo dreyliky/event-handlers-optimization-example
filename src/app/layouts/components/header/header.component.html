@@ -1,0 +1,6 @@
+<os-button
+    *ngFor="let page of pages"
+    [routerLink]="page.path"
+    [routerLinkActive]="'os-focused'">
+    {{ page.name }}
+</os-button>

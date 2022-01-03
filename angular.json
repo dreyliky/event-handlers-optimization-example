@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -28,11 +29,26 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-os/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "node_modules/ngx-os/themes/win10/index.scss",
+                "bundleName": "win10",
+                "inject": false
+              }
             ],
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "src/app/styles"
+                ]
+            },
             "scripts": []
           },
           "configurations": {

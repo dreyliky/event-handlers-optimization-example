@@ -1,0 +1,20 @@
+<os-header [size]="4">
+    In this example, we doinig exactly things as at <b>Example 4</b>,
+    but with <b>ChangeDetection.Default</b>.
+</os-header>
+
+<os-form-field [isStacked]="true">
+    <os-label>Grid items amount</os-label>
+
+    <os-number-box
+        [ngModel]="gridItemsAmount"
+        (osChange)="onAmountOfItemsChanged($event)">
+    </os-number-box>
+</os-form-field>
+
+<app-grid>
+    <app-grid-item
+        *ngFor="let gridItem of gridItems"
+        [label]="gridItem">
+    </app-grid-item>
+</app-grid>

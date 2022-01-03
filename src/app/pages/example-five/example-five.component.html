@@ -1,0 +1,21 @@
+<os-header [size]="4">
+    Click outside works exactly like at <b>Example 4</b>,
+    but grid-item <b>click handler</b> is now <b>delegated to the parent</b> grid component.
+</os-header>
+
+<os-form-field [isStacked]="true">
+    <os-label>Grid items amount</os-label>
+
+    <os-number-box
+        [ngModel]="gridItemsAmount"
+        (osChange)="onAmountOfItemsChanged($event)">
+    </os-number-box>
+</os-form-field>
+
+<app-optimized-grid>
+    <app-grid-item
+        *ngFor="let gridItem of gridItems; let gridIndex = index;"
+        [label]="gridItem"
+        [index]="gridIndex">
+    </app-grid-item>
+</app-optimized-grid>
